@@ -5,13 +5,16 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Ogbonna Vitalis",
-            "email": "agavitalisogbonna@gmail.com"
+            "name": "Nasir Uddin",
+            "email": "nasir@programmer.net"
         }
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"nasirgolflan\\database\\": "src/"}
+        "psr-4": {"nasirgolflan\\database\\": "src/"},
+        "files": ["src/functions_include.php"]
     },
-    "require": {}
+    "require": {
+        "php": ">=5.4.0"
+    }
 }
