@@ -1,5 +1,5 @@
 <?php
-
+namespace Nasirgolflan\Database;
 class Mysqli {
     protected $db;
     protected $active_group = 'local';
