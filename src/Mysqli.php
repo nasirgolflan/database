@@ -1,22 +1,33 @@
 <?php
 namespace Nasirgolflan\Database;
-class Mysqli {
-    protected $db;
-    protected $active_group = 'local';
-    protected $link;
 
+
+class Mysqli {
+    
+    public $active_group = 'local';
+    public $hostname = 'localhost';
+    public $username = 'root';
+    public $password = '';
+    public $database = 'default';
+    public $dbprefix = '';
+    protected $link;
+    protected $db;
+
+    public static function test(){
+        return "static function";
+    }
     
     function __construct($config=null){
-        if($config!=null){
-            $active_group=isset($config->active_group) ? $config->active_group : 'default';
-            $hostname=isset($config->hostname) ? $config->hostname : 'localhost';
-            $username=isset($config->username) ? $config->username : 'root';
-            $password=isset($config->password) ? $config->password : '';
-            $database=isset($config->database) ? $config->database : 'defautdb';
-            $dbprefix=isset($config->dbprefix) ? $config->dbprefix : '';
+        if($config){
+            
+            $active_group=isset($config['active_group']) ? $config['active_group'] : $this->active_group;
+            $hostname=isset($config['hostname']) ? $config['hostname'] : $this->hostname;
+            $username=isset($config['username']) ? $config['username'] : $this->username;
+            $password=isset($config['password']) ? $config['password'] : $this->password;
+            $database=isset($config['database']) ? $config['database'] : $this->database;
+            $dbprefix=isset($config['dbprefix']) ? $config['dbprefix'] : $this->dbprefix;
 
-
-            $this->db[$config->active_group]=[
+            $this->db[$active_group]=[
                 'dsn'   => '',
                 'hostname' => $hostname,
                 'username' => $username,		
@@ -24,16 +35,8 @@ class Mysqli {
                 'database' => $database,
                 'dbprefix' => $dbprefix,
             ];
-        $this->active_group=$active_group;
+        
         }
-        $this->db['local'] = array(
-            'dsn'   => '',
-            'hostname' => 'localhost',//change host name
-            'username' => 'root',		//change
-            'password' => '',			//change
-            'database' => 'yii2advanced',//change
-            'dbprefix' => '',
-        );
        
     
     $this->link = mysqli_connect($this->db[$this->active_group]['hostname'], $this->db[$this->active_group]['username'], $this->db[$this->active_group]['password'],$this->db[$this->active_group]['database']);
