@@ -1,8 +1,8 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+Composer: composer require nasirgolflan/database
 title: ''
-labels: ''
+Current version: 'v1.3'
 assignees: ''
 
 ---
