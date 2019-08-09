@@ -1,0 +1,20 @@
+{
+    
+        "repositories": [
+            {"type": "composer", "url": "https://repo.packagist.com/nasir/"},
+            {"packagist.org": false}
+        ],
+    
+    "name": "nasirgolflan/database",
+    "description": "Database Automation",
+    "type": "library",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Nasiruddin",
+            "email": "nasiruddin@golflan.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
