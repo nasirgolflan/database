@@ -51,7 +51,7 @@ For change pass your own config variable
 
 **Additional context**
 
-       
+       require __DIR__ . '/vendor/autoload.php';
         $db= new \Nasirgolflan\Database\Mysqli(['password'=>'welcome','database'=>'tmp']);   
         $db2= new \Nasirgolflan\Database\Mysqli(['password'=>'welcome','database'=>'slim3']);
 
